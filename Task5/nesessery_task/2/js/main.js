@@ -1,0 +1,20 @@
+const start = document.getElementById('start'),
+    budgetValue = document.querySelector('budget-value'),
+    dayBudgetValue = document.querySelector('daybudget-value'),
+    levelValue = document.querySelector('level-value'),
+    expensesValue = document.querySelector('expenses-value'),
+    optionalExpensesValue = document.querySelector('optionalexpenses-value'),
+    incomeValue = document.querySelector('income-value'),
+    monthVavingsValue = document.querySelector('monthsavings-value'),
+    expensesItems = document.getElementsByClassName('expenses-item'),
+    optionalExpensesItem = document.querySelectorAll('optionalexpenses-item'),
+    income = document.getElementById('income'),
+    savings = document.getElementById('savings'),
+    percent = document.getElementById('percent'),
+    sum = document.getElementById('sum'),
+    year = document.querySelector('.year-value'),
+    month = document.querySelector('.month-value'),
+    day = document.querySelector('.day-value'),
+    yearSavingsValue = document.querySelector('yearsavings-value');
+
+
