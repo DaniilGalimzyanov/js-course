@@ -1,27 +1,23 @@
-const input = document.querySelector('.phone__mask');
+window.addEventListener("DOMContentLoaded", function() {
+    const input = document.getElementById('tel');
+    input.value = '+7(323) 2331342';
+    input.addEventListener('input', function(){
+        let onlyNum = this.value.replace('+7(', '').replace(')', '').replace(' ', ''),
+            answer1 = onlyNum.slice(0, 3),
+            answer2 = onlyNum.slice(3, 10);
+        
+        if  (onlyNum.length == 3) {
+            this.value = `+7(${answer1}`;
+        } else if (onlyNum.length >= 3) {
+            this.value = `+7(${answer1}) ${answer2}`;
+        }     
+    });
 
-let mask = '+7 (xxx) xxx xxx xx ';
+    input.addEventListener('focus', function(){
+        this.value = '+7(';
+    });
+    input.addEventListener('change', function(){
+        this.value = '+7(323) 2331342';
+    });
 
-input.value = '+7 (xxx) xxx xxx xx';
-
-input.addEventListener('input', function(){
-    let a = input.value.split(' ');
-    if (a.length > 19) {
-        a.pop();
-    }
-    console.log(a);
-    for (let i = 0; i < a.length; i++) {
-        if (a[i] != mask[i]) {
-            a[i + 1] = '';
-            input.focus();
-            input.selectionStart = i;
-            console.log(i);
-            break;
-        }
-    }
-    input.value = a.join(''); 
 });
-
-// input.addEventListener('focus', function(){
-//     input.value = '+7 (xxx) xxx xxx xx';
-// });
